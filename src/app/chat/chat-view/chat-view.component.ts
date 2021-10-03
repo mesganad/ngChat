@@ -4,6 +4,7 @@ import { RegisterService } from 'src/app/register/service/register.service';
 import { ChatConversation } from '../model/chat.model';
 import { ChatService } from '../service/chat.service';
 
+
 @Component({
   selector: 'app-chat-view',
   templateUrl: './chat-view.component.html',
