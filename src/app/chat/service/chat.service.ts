@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { ChatRegister } from 'src/app/register/model/registration.model';
 import { ChatConversation } from '../model/chat.model';
 
 @Injectable({
@@ -11,6 +12,8 @@ export class ChatService {
   private chatData: BehaviorSubject<ChatConversation[]>;
 
   constructor(private http: HttpClient) {
+
+ 
     this.chatData = new BehaviorSubject<ChatConversation[]>([]);
   }
 
@@ -27,6 +30,20 @@ export class ChatService {
   }
 
   postData(data: ChatConversation): void {
-    this.http.post('https://us-central1-pka-forms-fef14.cloudfunctions.net/setMessage', data);
+    console.log(data, "data to be posted");
+
+    let url = 'https://us-central1-pka-forms-fef14.cloudfunctions.net/setMessage'
+    let httpHeaders = new HttpHeaders({
+      'Content-Type' : 'application/json',
+      'Cache-Control': 'no-cache'
+    });
+     this.http.post(url, data, { headers: httpHeaders }).toPromise()
+           .then(response=>{
+             console.log(response, "response");
+           })
+           .catch(err=>{
+             console.log(err,"err");
+           });
+    //this.http.post('https://us-central1-pka-forms-fef14.cloudfunctions.net/setMessage', data).toPromise();
   }
 }
