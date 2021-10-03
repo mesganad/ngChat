@@ -1,19 +1,30 @@
 <div>
-    <form>
-    <div class="form-group"><input type="text" placeholder="Screen Name" id = "screenName" class="form-control"/></div>
-    <br/>
-    <div class="form-group">
-        <input type="checkbox" id="funWithTaxes" name="funWithTaxes" value="Fun with Taxes"/>
-        <label for ="funWithTaxes">Fun with Taxes</label> <br/><br/>
-        <input type="checkbox" id="darkWeb" name="darkWeb" value="Dark Web"/>
-        <label for ="darkWeb">Dark Web</label> <br/><br/>
-        <input type="checkbox" id="mystic" name="mystic" value="Mystic-1-4-U"/>
-        <label for ="mystic">Mystic-1-4-U</label> <br/><br/>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary">Register</button>
-    </div>
-    </form>
-
-
+	<form #formInfo>
+		<div class="form-group">
+			<input
+				type="text"
+				placeholder="Screen Name"
+				id="screenName"
+				class="form-control"
+				#screenName
+				(keyup)="getScreenName(screenName.value)"
+			/>
+		</div>
+		<br />
+		<div class="form-group" *ngFor="let chatRoom of chatRoomData">
+			<input
+				type="checkbox"
+				id="darkWeb"
+				[name]="chatRoom?.chatRoomName"
+				[value]="chatRoom?.chatRoomName"
+				(change)="getChatRoomName($event.target)"
+			/>
+			<label for="darkWeb">{{ chatRoom?.chatRoomName }}</label> <br /><br />
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" type="button" (click)="getFormValue()">
+				Register
+			</button>
+		</div>
+	</form>
 </div>

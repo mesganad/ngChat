@@ -24,6 +24,7 @@ addUser(data:ChatRegister): void{
     selectedChatRoom:data.selectedChatRoom
   }
   this.registerData.next(newData);
+  console.log("newData" ,newData);
 }
 }
 
