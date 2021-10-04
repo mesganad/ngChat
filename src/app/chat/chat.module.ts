@@ -5,6 +5,7 @@ import { ChatService } from './service/chat.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ConversationComponent } from './conversation/conversation.component';
 import { ChatViewComponent } from './chat-view/chat-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,11 +15,14 @@ import { ChatViewComponent } from './chat-view/chat-view.component';
   ],
   providers:[
     RegisterService,
-    ChatService
+    ChatService,
+
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class ChatModule { }

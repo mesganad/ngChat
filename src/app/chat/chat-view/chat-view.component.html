@@ -1,12 +1,17 @@
-<div class="form-group">
-    <input type="text" placeholder="Chat Message" id="chatmessage" /> &nbsp;
-    <button class="btn btn-primary">Send</button>
 
 
 
-    <br /> <br />
 
-    <app-conversation>
 
-    </app-conversation>
-</div>
+<form [formGroup]='chatForm' (submit)='onSendEvent($event)'>
+
+    <label for="msg">
+        Message: <input id="msg" type="text"  name='screemsgnName'  required   formControlName='msg' />
+    </label>
+<br>
+<br>
+         
+         <input type="submit" value="Send">
+</form>
+
+<app-conversation></app-conversation>

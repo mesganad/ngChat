@@ -1,18 +1,36 @@
 <div>
-    <form>
-    <div class="form-group"><input type="text" placeholder="Screen Name" id = "screenName" class="form-control"/></div>
+   
+<form (submit)='registerUser($event)' >
+    <!-- <div class="form-group"><input type="text" placeholder="Screen Name" id = "screenName" class="form-control"/></div>
     <br/>
     <div class="form-group">
-        <input type="checkbox" id="funWithTaxes" name="funWithTaxes" value="Fun with Taxes"/>
+        <input type="checkbox" id="funWithTaxes" name="funWithTaxes" value="Fun with Taxes" formCotrolName='screenName'/>
         <label for ="funWithTaxes">Fun with Taxes</label> <br/><br/>
-        <input type="checkbox" id="darkWeb" name="darkWeb" value="Dark Web"/>
+        <input type="checkbox" id="darkWeb" name="darkWeb" value="Dark Web" formControlName='chatRoom'/>
         <label for ="darkWeb">Dark Web</label> <br/><br/>
         <input type="checkbox" id="mystic" name="mystic" value="Mystic-1-4-U"/>
         <label for ="mystic">Mystic-1-4-U</label> <br/><br/>
     </div>
     <div class="form-group">
         <button class="btn btn-primary">Register</button>
-    </div>
+    </div> -->
+
+    <label for="screenName">
+        Title: <input id="screenName" type="text"  name='screenName'  required   formControlName='screenName' />
+    </label>
+<br>
+<br>
+    <label for="selectedChatRoom">
+        <select name="selectedChatRoom" id="selectedChatRoom">
+            <option value="">--choose ChatRoom--</option>
+            <option value="funWithTaxes">Fun with Taxes</option>
+            <option value="darkWeb">Dark Web</option>
+            <option value="Mystic14U">Mystic-1-4-U</option>
+        </select>
+         </label>
+         <br>
+         <br>
+         <input type="submit" value="Register">
     </form>
 
 
