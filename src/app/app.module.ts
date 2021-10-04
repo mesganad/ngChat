@@ -7,6 +7,7 @@ import { ChatModule } from './chat/chat.module';
 import { RegisterModule } from './register/register.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { RegisterModule } from './register/register.module';
     BrowserModule,
     AppRoutingModule,
     ChatModule,
-    RegisterModule
+    RegisterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

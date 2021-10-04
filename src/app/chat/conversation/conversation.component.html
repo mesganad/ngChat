@@ -1,14 +1,23 @@
 <div>
-    <table border="3px">
-        <tr *ngFor="let data of conData">
-
-            <td>
-                {{data.screenName}}
-            </td>
-            <td>
-                {{data.message}}
-            </td>
-
+    <table class="table">
+        <tr>
+            <th scope="col"> SCREEN NAME</th>
+            <th scope="col">MESSAGE</th>
         </tr>
+
+        <tbody>
+
+            <tr scope="row" *ngFor="let data of conData">
+
+                <td>
+                    {{data.screenName}}
+                </td>
+                <td>
+                    {{data.message}}
+                </td>
+    
+            </tr>
+        </tbody>
+        
     </table>
 </div>

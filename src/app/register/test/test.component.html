@@ -1,0 +1,24 @@
+
+
+
+
+
+<form [formGroup]='userForm' (submit)='onRegisterEvent($event)'>
+
+    <label for="screenName">
+        Screen Name: <input id="screenName" type="text"  name='screenName'  required   formControlName='screenName' />
+    </label>
+<br>
+<br>
+    <label for="selectedChatRoom">
+        <select formControlName="selectedChatRoom" id="selectedChatRoom">
+            <option value="">--choose ChatRoom--</option>
+            <option value="Fun with Taxes">Fun with Taxes</option>
+            <option value="The Dark Web">Dark Web</option>
+            <option value="Mystic-1-4-U">Mystic-1-4-U</option>
+        </select>
+         </label>
+         <br>
+         <br>
+         <input type="submit" value="Register">
+</form>

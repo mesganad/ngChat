@@ -13,9 +13,11 @@ import { ChatService } from '../service/chat.service';
 export class ConversationComponent implements OnInit {
 
   conData: ChatConversation[]=[];
-  regData: ChatRegister | undefined;
+  regData!: ChatRegister;
 
-  constructor(private chatService: ChatService, private registerService: RegisterService) {}
+  constructor(private chatService: ChatService, private registerService: RegisterService) {
+    console.log("inside constructor of conversation comp")
+  }
 
   ngOnInit(): void {
     this.chatService.chatData$.subscribe(data=>{
@@ -24,8 +26,19 @@ export class ConversationComponent implements OnInit {
     this.registerService.registerData$.subscribe(rdata=>{
       this.regData=rdata;
     })
-    this.chatService.fetchChatData("Mystic-1-4-U"); //this.regData?.selectedChatRoom
+
+  //  const userData=JSON.parse(localStorage.getItem('userRegister') as any);
+
+  //  console.log(userData, "userData")
+
+
+    console.log("test registered user ", this.regData);
+    console.log("selectedChat Room ", this.regData.selectedChatRoom);
+    this.chatService.fetchChatData(this.regData?.selectedChatRoom); 
+    // this.chatService.fetchChatData(userData.selectedChatRoom); 
   }
+
+  
 
 
 }
