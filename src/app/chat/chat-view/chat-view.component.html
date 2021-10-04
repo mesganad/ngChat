@@ -5,13 +5,13 @@
 
 <form [formGroup]='chatForm' (submit)='onSendEvent($event)'>
 
+   <div class="form-group">
     <label for="msg">
-        Message: <input id="msg" type="text"  name='screemsgnName'  required   formControlName='msg' />
+        Message: <input id="msg" type="text"  name='screemsgnName'  required   formControlName='msg' class="form-control" />
     </label>
-<br>
-<br>
+   </div>
          
-         <input type="submit" value="Send">
+         <input type="submit" value="Send" class="btn btn-success">
 </form>
-
+<br>
 <app-conversation></app-conversation>

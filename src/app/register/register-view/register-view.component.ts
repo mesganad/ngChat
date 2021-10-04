@@ -27,19 +27,18 @@ export class RegisterViewComponent implements OnInit {
     });
   }
 
-  onRegisterEvent(regData: ChatRegister): void {
-    this.registerService.addUser(regData);
-  }
+ 
 
-  registerUser(e:Event){
+  onRegisterEvent(e:Event){
     e.preventDefault();
-    let createdUser={
-
+    let createdUser: ChatRegister={
+  
       screenName: this.userForm.controls.screenName.value,
       selectedChatRoom: this.userForm.controls.selectedChatRoom.value,
     }
-
+  
     console.log(createdUser);
+    this.registerService.addUser(createdUser);
   }
 
 }

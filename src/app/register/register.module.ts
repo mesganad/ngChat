@@ -8,6 +8,8 @@ import { TestComponent } from './test/test.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 
 
+
+
 @NgModule({
   declarations: [
     RegisterViewComponent,
@@ -20,6 +22,8 @@ import { RegisterViewComponent } from './register-view/register-view.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    
+   
   
   ]
 })

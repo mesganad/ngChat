@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
@@ -299,7 +299,7 @@
   }
 </style>
 
-<!-- Toolbar -->
+
 <div class="toolbar" role="banner" style="align-self: center;">
   <span><a href="#">Home </a></span>
   <div class="spacer"></div>
@@ -319,4 +319,23 @@
 
   <router-outlet></router-outlet>
 
+</div> -->
+
+
+
+
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/">HOME</a>
+    <!-- <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+
+    <a class="btn btn-outline-primary my-2 my-sm-0" routerLink="chatapp/register" >Register</a>
+    <a class="btn btn-outline-primary my-2 my-sm-0" routerLink="chatapp/chat">Chat</a>
+  </nav>
+  <div class="container">
+  <span class="title">{{ title }}</span>
+  
+  <router-outlet></router-outlet>
 </div>

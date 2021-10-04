@@ -6,9 +6,8 @@ import { RegisterViewComponent } from './register/register-view/register-view.co
 import { TestComponent } from './register/test/test.component';
 
 const routes: Routes = [
-  {path: 'chatapp/register', component:TestComponent},
+  {path: 'chatapp/register', component:RegisterViewComponent},
   {path: 'chatapp/chat', component:ChatViewComponent},
-  // {path:'test', component:TestComponent}
 ];
 
 @NgModule({

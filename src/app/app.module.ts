@@ -18,6 +18,7 @@ import { RegisterModule } from './register/register.module';
     AppRoutingModule,
     ChatModule,
     RegisterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

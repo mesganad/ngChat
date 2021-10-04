@@ -28,7 +28,7 @@ export class ConversationComponent implements OnInit {
     })
     console.log("test registered user ", this.regData);
     console.log("selectedChat Room ", this.regData.selectedChatRoom);
-    this.chatService.fetchChatData(this.regData?.selectedChatRoom); //this.regData?.selectedChatRoom
+    this.chatService.fetchChatData(this.regData?.selectedChatRoom); 
   }
 
   
