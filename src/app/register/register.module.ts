@@ -20,11 +20,8 @@ import { RegisterViewComponent } from './register-view/register-view.component';
   ],
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
     
-   
-  
   ]
 })
 export class RegisterModule { }

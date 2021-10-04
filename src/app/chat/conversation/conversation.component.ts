@@ -26,9 +26,16 @@ export class ConversationComponent implements OnInit {
     this.registerService.registerData$.subscribe(rdata=>{
       this.regData=rdata;
     })
+
+  //  const userData=JSON.parse(localStorage.getItem('userRegister') as any);
+
+  //  console.log(userData, "userData")
+
+
     console.log("test registered user ", this.regData);
     console.log("selectedChat Room ", this.regData.selectedChatRoom);
     this.chatService.fetchChatData(this.regData?.selectedChatRoom); 
+    // this.chatService.fetchChatData(userData.selectedChatRoom); 
   }
 
   

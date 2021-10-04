@@ -27,20 +27,20 @@ export class ChatService {
       )
       .toPromise()
       .then((data) => {
-        console.log('inside fetchdata  ')
+        console.log('inside fetchdata')
         this.chatData.next(data);
 
       });
   }
 
-  postData(data: ChatConversation) {
+  postData(data: ChatConversation){
     console.log(data, "data to be posted");
 
     let url = "https://us-central1-pka-forms-fef14.cloudfunctions.net/setMessage";
 
     this.http.post(url,data).subscribe(response=>{
       console.log(response,"response");
-    })
+    });
 
     const currentData = this.chatData.getValue();
 
@@ -48,7 +48,9 @@ export class ChatService {
 
     this.chatData.next(updatedData);
 
+   
 
+    console.log(this.chatData,"updated or not");
     // return this.http
     //   .post(url, data)
     //   .toPromise()

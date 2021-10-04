@@ -30,7 +30,7 @@ export class RegisterViewComponent implements OnInit {
  
 
   onRegisterEvent(e:Event){
-    e.preventDefault();
+    e.preventDefault(); 
     let createdUser: ChatRegister={
   
       screenName: this.userForm.controls.screenName.value,

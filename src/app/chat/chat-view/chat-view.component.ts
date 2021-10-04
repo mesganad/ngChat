@@ -38,7 +38,7 @@ export class ChatViewComponent implements OnInit {
   }
 
   onSendEvent(e: Event) {
-    e.preventDefault();
+    e.preventDefault(); //
 
     console.log(this.registerData, "registered data");
 
